@@ -12,5 +12,5 @@ function profile {
     Set-Location ~\Documents\PowerShell
 }
 
-Set-Alias -name stats -Value "C:\Users\andreas.hard\Documents\GitHub\Code\PowerShell\Used Scripts\Show-Usage.ps1"
-Set-Alias -name make -Value "C:\Users\andreas.hard\Documents\GitHub\Code\PowerShell\Used Scripts\make.ps1"
+Set-Alias -name stats -Value "~\Documents\GitHub\PowerShell\Scripts\Show-Usage.ps1"
+Set-Alias -name make -Value "~\Documents\GitHub\PowerShell\Scripts\make.ps1"

@@ -5,7 +5,7 @@ function Code2 {Set-Location ~\Documents\GitHub\Code2}
 function profile {Set-Location ~\Documents\PowerShell}
 function Powershell {Set-Location ~\Documents\GitHub\PowerShell}
 function Hypr {Set-Location ~\Documents\GitHub\Hyprland-Config}
-function Nvim {Set-Location ~\Documents\GitHub\Nvim-Config}
+function vim {Set-Location ~\Documents\GitHub\Nvim-Config}
 
 do 
 {
@@ -19,7 +19,7 @@ do
         "3" {profile}
         "4" {Powershell}
         "5" {Hypr}
-        "6" {Nvim}
+        "6" {vim}
     }
 }until (1..6 -contains $Repo)
 

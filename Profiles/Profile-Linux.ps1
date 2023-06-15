@@ -1,5 +1,16 @@
 oh-my-posh init pwsh | Invoke-Expression
 
+if (! (Get-Module -ListAvailable -Name Get-ChildItemColor)) {
+    Write-Host "Module not installed, installing"
+    Install-Module Get-ChildItemColor
+} 
+else {
+    Import-Module Get-ChildItemColor
+}
+
+Set-Alias lsall Get-ChildItemColor -option AllScope
+Set-Alias ls Get-ChildItemColorFormatWide -option AllScope -HideHeader
+
 function Code1 {Set-Location ~/Code}
 function Code2 {Set-Location ~/Code2}
 function profile {Set-Location ~/.config/powershell}

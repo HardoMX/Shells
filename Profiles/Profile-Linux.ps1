@@ -8,8 +8,9 @@ else {
     Import-Module Get-ChildItemColor
 }
 
-Set-Alias lsall Get-ChildItemColor -option AllScope
-Set-Alias ls Get-ChildItemColorFormatWide -option AllScope -HideHeader
+function better_ls {Get-ChildItemColorFormatWide -HideHeader}
+Set-Alias -name lsall -value Get-ChildItemColor -option AllScope
+Set-Alias -name ls -value better_ls -option AllScope
 
 function Code1 {Set-Location ~/Code}
 function Code2 {Set-Location ~/Code2}

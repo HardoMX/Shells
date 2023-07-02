@@ -17,7 +17,7 @@ function Code2 {Set-Location ~\Documents\GitHub\Code2}
 function profile {Set-Location ~\Documents\PowerShell}
 function Powershell {Set-Location ~\Documents\GitHub\PowerShell}
 function Hypr {Set-Location ~\Documents\GitHub\Hyprland-Config}
-function vim {Set-Location ~\Documents\GitHub\Nvim-Config}
+function vim {Set-Location ~\Documents\GitHub\nvim}
 
 do 
 {

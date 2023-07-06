@@ -1,23 +1,57 @@
 oh-my-posh init pwsh | Invoke-Expression
 
-if (! (Get-Module -ListAvailable -Name Get-ChildItemColor)) {
+
+if (! (Get-Module -ListAvailable -Name Terminal-Icons)) {
     Write-Host "Module not installed, installing"
-    Install-Module Get-ChildItemColor
+    Install-Module Terminal-Icons
 }
 else {
-    Import-Module Get-ChildItemColor
+    Import-Module Terminal-Icons
 }
 
-function better_ls {Get-ChildItemColorFormatWide -HideHeader}
-Set-Alias -name lsall -value Get-ChildItemColor -option AllScope
-Set-Alias -name ls -value better_ls -option AllScope
 
-function Code1 {Set-Location ~\Documents\GitHub\Code}
-function Code2 {Set-Location ~\Documents\GitHub\Code2}
-function profile {Set-Location ~\Documents\PowerShell}
-function Powershell {Set-Location ~\Documents\GitHub\PowerShell}
-function Hypr {Set-Location ~\Documents\GitHub\Hyprland-Config}
-function vim {Set-Location ~\Documents\GitHub\nvim}
+function BetterLS {param ($path) Get-ChildItem $path | Format-Wide -AutoSize}
+function lsall {param ($path) Get-ChildItem $path -force}
+Set-Alias -name ll -value lsall
+Set-Alias -name ls -value BetterLS
+
+
+function Code1 {
+    if ($IsWindows) {
+        Set-Location ~\Documents\GitHub\Code}
+    elseif ($IsLinux) {
+        Set-Location ~/Code}
+    }
+function Code2 {
+    if ($IsWindows) {
+        Set-Location ~\Documents\GitHub\Code2}
+    elseif ($IsLinux) {
+        Set-Location ~/Code2}
+    }
+function profile {
+    if ($IsWindows) {
+        Set-Location ~\Documents\PowerShell}
+    elseif ($IsLinux) {
+        Set-Location ~/.config/powershell}
+    }
+function Powershell {
+    if ($IsWindows) {
+        Set-Location ~\Documents\GitHub\PowerShell}
+    elseif ($IsLinux) {
+        Set-Location ~/PowerShell}
+    }
+function Hypr {
+    if ($IsWindows) {
+        Set-Location ~\Documents\GitHub\Hyprland-Config}
+    elseif ($IsLinux) {
+        Set-Location ~/Hyprland-Config}
+    }
+function vim {
+    if ($IsWindows) {
+        Set-Location ~\Documents\GitHub\nvim}
+    elseif ($IsLinux) {
+        Set-Location ~/.config/nvim}
+    }
 
 do 
 {
@@ -37,6 +71,15 @@ do
 
 Clear-Host
 
-Set-Alias -name stats -Value "~\Documents\GitHub\PowerShell\Scripts\Show-Usage.ps1"
-Set-Alias -name make -Value "~\Documents\GitHub\PowerShell\Scripts\make.ps1"
+
+function stats {
+    if ($IsWindows) {
+        "~\Documents\GitHub\PowerShell\Scripts\Show-Usage.ps1"}
+    elseif ($IsLinux) {
+        "~/PowerShell/Scripts/Show-Usage.ps1"}
+    }
+
+Set-Alias -name stats -Value stats
+
+
 Set-Alias -name nvim -Value nvim.exe

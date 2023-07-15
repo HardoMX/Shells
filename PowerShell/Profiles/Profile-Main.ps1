@@ -1,4 +1,4 @@
-oh-my-posh init pwsh --config "~/Documents/GitHub/PowerShell/Profiles/theme.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "../../oh-my-posh/theme.omp.json" | Invoke-Expression
 
 
 if (! (Get-Module -ListAvailable -Name Terminal-Icons)) {
@@ -38,7 +38,7 @@ function Powershell {
     if ($IsWindows) {
         Set-Location ~\Documents\GitHub\PowerShell}
     elseif ($IsLinux) {
-        Set-Location ~/PowerShell}
+        Set-Location ~/Shells/PowerShell}
     }
 function Hypr {
     if ($IsWindows) {
@@ -51,6 +51,12 @@ function vim {
         Set-Location ~\Documents\GitHub\nvim}
     elseif ($IsLinux) {
         Set-Location ~/.config/nvim}
+    }
+function bashconf {
+    if ($IsWindows) {
+        Set-Location ~\Documents\Shells\bash}
+    elseif ($IsLinux) {
+        Set-Location ~/Shells/bash}
     }
 
 do 

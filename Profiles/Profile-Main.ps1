@@ -81,5 +81,6 @@ function stats {
 
 Set-Alias -name stats -Value stats
 
-
-Set-Alias -name nvim -Value nvim.exe
+if ($IsWindows){
+    Set-Alias -name nvim -Value nvim.exe
+}

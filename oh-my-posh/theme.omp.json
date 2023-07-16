@@ -103,7 +103,7 @@
                     "style": "diamond",
                     "trailing_diamond": "\uE0B4",
                     "foreground": "#FFFFFF",
-                    "background": "#FFFFFF",
+                    "background": "#0000FF",
                     "background_templates": [
                         "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFEB3B{{ end }}",
                         "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}",
@@ -124,7 +124,7 @@
                     "style": "diamond",
                     "trailing_diamond": "\uE0B4",
                     "foreground": "#FFFFFF",
-                    "background": "#FFFFFF",
+                    "background": "#FF0000",
                     "properties": {
                         "time_format": "15:04:05"
                     }

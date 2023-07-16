@@ -1,3 +1,4 @@
+#oh-my-posh init pwsh --config "~/Documents/GitHub/Shells/oh-my-posh/theme.omp.json" | Invoke-Expression
 oh-my-posh init pwsh --config "../oh-my-posh/theme.omp.json" | Invoke-Expression
 
 

@@ -1,0 +1,75 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "final_space": true,
+    "version": 2,
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "os",
+                    "style": "diamond",
+                    "leading_diamond": "\uE0B6",
+                    "trailing_diamond": "\uE0B0",
+                    "foreground": "#FFFFFF",
+                    "background": "#FF0000"
+                },
+                {
+                    "type": "shell",
+                    "style": "diamond",
+                    "leading_diamond": "<transparent>\uE0B0",
+                    "trailing_diamond": "\uE0B0",
+                    "foreground": "#FFFFFF",
+                    "background": "#0000FF"
+                },
+                {
+                    "type": "path",
+                    "style": "diamond",
+                    "leading_diamond": "<transparent>\uE0B0",
+                    "trailing_diamond": "\uE0B0",
+                    "foreground": "#FFFFFF",
+                    "background": "#61AFEF",
+                    "properties": {
+                        "style": "full"
+                    }
+                },
+                {
+                    "type": "git",
+                    "style": "diamond",
+                    "leading_diamond": "<transparent>\uE0B0",
+                    "trailing_diamond": "\uE0B0",
+                    "foreground": "#FFFFFF",
+                    "background": "#F1502F",
+                    "template": " {{ .HEAD }}"
+                }
+            ]
+        },
+        {
+            "type": "rprompt",
+            "alignment": "right",
+            "segments": [
+                {
+                    "type": "git",
+                    "style": "diamond",
+                    "leading_diamond": "\uE0B6",
+                    "trailing_diamond": "\uE0B4",
+                    "foreground": "#FFFFFF",
+                    "background": "#FFFFFF"
+                },
+                {
+                    "type": "session",
+                    "style": "diamond",
+                    "leading_diamond": "<transparent>\uE0B0",
+                    "trailing_diamond": "\uE0B0",
+                    "foreground": "#ffffff",
+                    "background": "#FF00FF",
+                    "template": "{{ .UserName }} @ {{ .HostName }}",
+                    "properties": {
+                        "display_host": true
+                    }
+                }
+            ]
+        }
+    ]
+}

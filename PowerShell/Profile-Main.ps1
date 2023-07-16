@@ -1,4 +1,4 @@
-oh-my-posh init pwsh --config "../../oh-my-posh/theme.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "../oh-my-posh/theme.omp.json" | Invoke-Expression
 
 
 if (! (Get-Module -ListAvailable -Name Terminal-Icons)) {
@@ -36,7 +36,7 @@ function profile {
     }
 function Powershell {
     if ($IsWindows) {
-        Set-Location ~\Documents\GitHub\PowerShell}
+        Set-Location ~\Documents\GitHub\Shells\PowerShell}
     elseif ($IsLinux) {
         Set-Location ~/Shells/PowerShell}
     }
@@ -54,14 +54,14 @@ function vim {
     }
 function bashconf {
     if ($IsWindows) {
-        Set-Location ~\Documents\Shells\bash}
+        Set-Location ~\Documents\GitHub\Shells\bash}
     elseif ($IsLinux) {
         Set-Location ~/Shells/bash}
     }
 
 do 
 {
-    Write-Host "Choose Reposiotry: 1) Code1. 2) Code2. 3) Profile. 4) PowerShell. 5) Hypr. 6) Nvim"
+    Write-Host "Choose Reposiotry: 1) Code1. 2) Code2. 3) Profile. 4) PowerShell. 5) Hypr. 6) Nvim. 7) Bash"
     $Repo = Read-Host [Enter Selection]
 
     Switch ($Repo)
@@ -72,8 +72,9 @@ do
         "4" {Powershell}
         "5" {Hypr}
         "6" {vim}
+        "7" {bashconf}
     }
-}until (1..6 -contains $Repo)
+}until (1..7 -contains $Repo)
 
 Clear-Host
 

@@ -55,15 +55,6 @@
                     }
                 },
                 {
-                    "type": "git",
-                    "style": "diamond",
-                    "leading_diamond": "<transparent>\uE0B0",
-                    "trailing_diamond": "\uE0B0",
-                    "foreground": "#FFFFFF",
-                    "background": "#F1502F",
-                    "template": " {{ .HEAD }}"
-                },
-                {
                     "type": "exit",
                     "style": "diamond",
                     "leading_diamond": "<transparent>\uE0B0",

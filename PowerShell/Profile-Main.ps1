@@ -42,36 +42,38 @@ function uptime {
     Get-WmiObject win32_operatingsystem | Select-Object @{LABEL='Machine Name'; EXPRESSION={$_.csname}}, @{LABEL='Last Boot Up Time'; EXPRESSION={$upsince}}
 }
 
-#Find a file
-function find ($dir, $name){
-    Get-ChildItem $dir -Recurse -Filter "*${name}*" -ErrorAction SilentlyContinue | foreach {
-        Write-Output "${_}"
+if ($IsWindows){
+    #Find a file
+    function find ($dir, $name){
+        Get-ChildItem $dir -Recurse -Filter "*${name}*" -ErrorAction SilentlyContinue | foreach {
+            Write-Output "${_}"
+        }
     }
-}
 
-#Unzip a file into folder with same name (UNTESTED)
-function unzip ($file) {
-    $folder = $file -replace ".zip", ""
-    mkdir $folder
-    $fullFile = Get-ChildItem -Path $pwd -Filter .\cove.zip | ForEach-Object{$_.FullName}
-    Expand-Archive -Path $fullFile -DestinationPath $folder
-}
+    #Unzip a file into folder with same name (UNTESTED)
+    function unzip ($file) {
+        $folder = $file -replace ".zip", ""
+        mkdir $folder
+        $fullFile = Get-ChildItem -Path $pwd -Filter .\cove.zip | ForEach-Object{$_.FullName}
+        Expand-Archive -Path $fullFile -DestinationPath $folder
+    }
 
 #Grep function
-function grep ($regex, $dir) {
-    if ($dir) {
-        ls $dir | Select-String $regex
-        return
+    function grep ($regex, $dir) {
+        if ($dir) {
+            ls $dir | Select-String $regex
+            return
+        }
+        $input | Select-String $regex
     }
-    $input | Select-String $regex
-}
 
-#Touch alias
-New-Alias -Name touch -Value New-Item
+    #Touch alias
+    New-Alias -Name touch -Value New-Item
 
-#Sed function
-function sed($file, $find, $replace) {
-    (Get-Content $file).replace("$find", $replace) | Set-Content $file
+    #Sed function
+    function sed($file, $find, $replace) {
+        (Get-Content $file).replace("$find", $replace) | Set-Content $file
+    }
 }
 
 #Kill function

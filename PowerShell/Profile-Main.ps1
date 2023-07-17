@@ -42,7 +42,7 @@ function uptime {
     Get-WmiObject win32_operatingsystem | Select-Object @{LABEL='Machine Name'; EXPRESSION={$_.csname}}, @{LABEL='Last Boot Up Time'; EXPRESSION={$upsince}}
 }
 
-if ($IsWindows){
+if ($IsWindows) {
     #Find a file
     function find ($dir, $name){
         Get-ChildItem $dir -Recurse -Filter "*${name}*" -ErrorAction SilentlyContinue | foreach {

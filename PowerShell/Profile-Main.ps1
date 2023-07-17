@@ -1,6 +1,4 @@
-oh-my-posh init pwsh --config "../oh-my-posh/theme.omp.json" | Invoke-Expression
-
-
+#Check if Terminal-Icons is installed and import it
 if (! (Get-Module -ListAvailable -Name Terminal-Icons)) {
     Write-Host "Module not installed, installing"
     Install-Module Terminal-Icons
@@ -10,12 +8,78 @@ else {
 }
 
 
+################################
+#          Aliases             #
+################################
+#Better ls commands
 function BetterLS {param ($path) Get-ChildItem $path | Format-Wide -AutoSize}
 function lsall {param ($path) Get-ChildItem $path -force}
 Set-Alias -name ll -value lsall
 Set-Alias -name ls -value BetterLS
 
+#Get Public ip
+function ip {
+    (Invoke-WebRequest http://ifconfig.me/ip).Content
+}
 
+#Reload Profile
+function rl {
+    . $PROFILE
+}
+
+#See uptime
+function uptime {
+    $bootUpTime = Get-WmiObject win32_operatingsystem | Select-Object lastbootuptime
+    $plusMinus = $bootUpTime.lastbootuptime.SubString(21,1)
+    $plusMinusMinutes = $bootUpTime.lastbootuptime.SubString(22, 3)
+    $hourOffset = [int]$plusMinusMinutes/60
+    $minuteOffset = 00
+    if ($hourOffset -contains '.') { $minuteOffset = [int](60*[decimal]('.' + $hourOffset.ToString().Split('.')[1]))}       
+    if ([int]$hourOffset -lt 10 ) { $hourOffset = "0" + $hourOffset + $minuteOffset.ToString().PadLeft(2,'0') } 
+    else { $hourOffset = $hourOffset + $minuteOffset.ToString().PadLeft(2,'0') }
+    $leftSplit = $bootUpTime.lastbootuptime.Split($plusMinus)[0]
+    $upSince = [datetime]::ParseExact(($leftSplit + $plusMinus + $hourOffset), 'yyyyMMddHHmmss.ffffffzzz', $null)
+    Get-WmiObject win32_operatingsystem | Select-Object @{LABEL='Machine Name'; EXPRESSION={$_.csname}}, @{LABEL='Last Boot Up Time'; EXPRESSION={$upsince}}
+}
+
+#Find a file
+function find ($dir, $name){
+    Get-ChildItem $dir -Recurse -Filter "*${name}*" -ErrorAction SilentlyContinue | foreach {
+        Write-Output "${_}"
+    }
+}
+
+#Unzip a file into folder with same name (UNTESTED)
+function unzip ($file) {
+    $folder = $file -replace ".zip", ""
+    mkdir $folder
+    $fullFile = Get-ChildItem -Path $pwd -Filter .\cove.zip | ForEach-Object{$_.FullName}
+    Expand-Archive -Path $fullFile -DestinationPath $folder
+}
+
+#Grep function
+function grep ($regex, $dir) {
+    if ($dir) {
+        ls $dir | Select-String $regex
+        return
+    }
+    $input | Select-String $regex
+}
+
+#Touch alias
+New-Alias -Name touch -Value New-Item
+
+#Sed function
+function sed($file, $find, $replace) {
+    (Get-Content $file).replace("$find", $replace) | Set-Content $file
+}
+
+#Kill function
+function pkill($name) {
+    Get-Process $name -ErrorAction SilentlyContinue | Stop-Process
+}
+
+#Set up functions for quickly changing my github repositories
 function Code1 {
     if ($IsWindows) {
         Set-Location ~\Documents\GitHub\Code}
@@ -79,15 +143,10 @@ do
 Clear-Host
 
 
-function stats {
-    if ($IsWindows) {
-        "~\Documents\GitHub\PowerShell\Scripts\Show-Usage.ps1"}
-    elseif ($IsLinux) {
-        "~/PowerShell/Scripts/Show-Usage.ps1"}
-    }
-
-Set-Alias -name stats -Value stats
-
+#Set up nvim alias on windows
 if ($IsWindows){
     Set-Alias -name nvim -Value nvim.exe
 }
+
+#Initialise Oh-My-Posh
+oh-my-posh init pwsh --config "../oh-my-posh/theme.omp.json" | Invoke-Expression

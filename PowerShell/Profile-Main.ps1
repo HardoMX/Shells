@@ -45,7 +45,7 @@ function uptime {
 if ($IsWindows) {
     #Find a file
     function find ($dir, $name){
-        Get-ChildItem $dir -Recurse -Filter "*${name}*" -ErrorAction SilentlyContinue | foreach {
+        Get-ChildItem $dir -Recurse -Filter "*${name}*" -ErrorAction SilentlyContinue | ForEach-Object {
             Write-Output "${_}"
         }
     }
@@ -61,7 +61,7 @@ if ($IsWindows) {
 #Grep function
     function grep ($regex, $dir) {
         if ($dir) {
-            ls $dir | Select-String $regex
+        Get-ChildItem $dir | Select-String $regex
             return
         }
         $input | Select-String $regex

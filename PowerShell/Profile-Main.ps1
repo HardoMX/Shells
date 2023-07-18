@@ -127,7 +127,7 @@ function bashconf {
 
 do 
 {
-    Write-Host "Choose Reposiotry: 1) Code1. 2) Code2. 3) Profile. 4) PowerShell. 5) Hypr. 6) Nvim. 7) Bash"
+    Write-Host "Choose Reposiotry: 1) Code1. 2) Code2. 3) Profile. 4) PowerShell. 5) Hypr. 6) Nvim. 7) Bash. 8) Home"
     $Repo = Read-Host [Enter Selection]
 
     Switch ($Repo)
@@ -139,8 +139,9 @@ do
         "5" {Hypr}
         "6" {vim}
         "7" {bashconf}
+        "8" {Set-Location ~}
     }
-}until (1..7 -contains $Repo)
+}until (1..8 -contains $Repo)
 
 Clear-Host
 

@@ -5,6 +5,8 @@ shopt -s autocd #Allows you to cd into directory by just typing directory name
 HISTSIZE= HISTFILESIZE= #Set History File to Infinite
 
 alias mkd="mkdir -pv"
+alias cd..="cd .."
+alias cd...="cd ../.."
 
 if [ lsd ];
 then

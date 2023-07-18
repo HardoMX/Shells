@@ -27,6 +27,9 @@ function rl {
     . $PROFILE
 }
 
+#Quickly back up two directories
+function cd... {Set-Location .. && Set-Location ..}
+
 #See uptime
 function uptime {
     $bootUpTime = Get-WmiObject win32_operatingsystem | Select-Object lastbootuptime
@@ -67,9 +70,6 @@ if ($IsWindows) {
         $input | Select-String $regex
     }
 
-    #Touch alias
-    New-Alias -Name touch -Value New-Item
-
     #Sed function
     function sed($file, $find, $replace) {
         (Get-Content $file).replace("$find", $replace) | Set-Content $file
@@ -81,7 +81,7 @@ function pkill($name) {
     Get-Process $name -ErrorAction SilentlyContinue | Stop-Process
 }
 
-#Set up functions for quickly changing my github repositories
+#Set up functions for quickly changing between my github repositories
 function Code1 {
     if ($IsWindows) {
         Set-Location ~\Documents\GitHub\Code}

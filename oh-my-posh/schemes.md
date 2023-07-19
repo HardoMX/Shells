@@ -36,24 +36,20 @@
 | ![#565f89](https://place-hold.it/15/565f89?text)`#565f89` | Time |
 | ![#cfc9c2](https://place-hold.it/15/cfc9c2?text)`#cfc9c2` | User- and Hostname |
 
+### neon.omp.json
+**Left block**
+| Color | Use |
+| :-: | :- |
+| ![#F13806](https://place-hold.it/15/F13806?text)`#F13806` | OS |
+| ![#A5D8F3](https://place-hold.it/15/A5D8F3?text)`#A5D8F3` <br /> ![#FE1F4E](https://place-hold.it/15/FE1F4E?text)`#FE1F4E` <br /> ![#D1FE49](https://place-hold.it/15/D1FE49?text)`#D1FE49`|  Battery Charging, <br /> Discharging, <br /> Full |
+| ![#0735EE](https://place-hold.it/15/0735EE?text)`#0735EE` | Shell |
+| ![#FF9DE6](https://place-hold.it/15/FF9DE6?text)`#FF9DE6` | Path |
+| ![#34FD50](https://place-hold.it/15/34FD50?text)`#34FD50` <br /> ![#FF1493](https://place-hold.it/15/FF1493?text)`#FF1493` | Command Success <br /> Command Failed |
 
-**For Neon**
-- #F13806: ![#f13806](https://place-hold.it/15/f13806?text)
-- #0735EE: ![#0735EE](https://place-hold.it/15/0735EE?text)
-  <br />
-- #34FD50: ![#34FD50](https://place-hold.it/15/34FD50?text)
-- #D1FE49: ![#D1FE49](https://place-hold.it/15/D1FE49?text)
-- #FBB23F: ![#FBB23F](https://place-hold.it/15/FBB23F?text)
-- #FE1F4E: ![#FE1F4E](https://place-hold.it/15/FE1F4E?text)
-  <br />
-- #FF9DE6: ![#FF9DE6](https://place-hold.it/15/FF9DE6?text)
-- #A5D8F3: ![#A5D8F3](https://place-hold.it/15/A5D8F3?text)
-- #E8E500: ![#E8E500](https://place-hold.it/15/E8E500?text)
-  <br />
-- #FFD300: ![#FFD300](https://place-hold.it/15/FFD300?text)
-- #DE38C8: ![#DE38C8](https://place-hold.it/15/DE38C8?text)
-- #652EC7: ![#652EC7](https://place-hold.it/15/652EC7?text)
-  <br />
-- #FFFF66: ![#FFFF66](https://place-hold.it/15/FFFF66?text)
-- #FF1493: ![#FF1493](https://place-hold.it/15/FF1493?text)
-- #C24CF6: ![#C24CF6](https://place-hold.it/15/C24CF6?text)
+**Right block**
+| Color | Use |
+| :-: | :- |
+| ![#DE38C8](https://place-hold.it/15/DE38C8?text)`#DE38C8` | Execution Time |
+| ![#FFFF66](https://place-hold.it/15/FFFF66?text)`#FFFF66` <br /> ![#FBB23F](https://place-hold.it/15/FBB23F?text)`#FBB23F` <br /> ![#652EC7](https://place-hold.it/15/652EC7?text)`#652EC7` <br /> ![#-C24CF6](https://place-hold.it/15/C24CF6?text)`#C24CF6` | Git working/staging changed <br /> Git ahead/behind <br /> Git Ahead <br /> Git Behind |
+| ![#E8E500](https://place-hold.it/15/E8E500?text)`#E8E500` | Time |
+| ![#FFD300](https://place-hold.it/15/FFD300?text)`#FFD300` | User- and Hostname |

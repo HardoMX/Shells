@@ -152,4 +152,5 @@ if ($IsWindows){
 }
 
 #Initialise Oh-My-Posh
-oh-my-posh init pwsh --config "https://raw.githubusercontent.com/HardoMX/Shells/main/oh-my-posh/theme.omp.json" | Invoke-Expression
+#oh-my-posh init pwsh --config "https://raw.githubusercontent.com/HardoMX/Shells/main/oh-my-posh/theme.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "~/Documents/GitHub/Shells/oh-my-posh/neon.omp.json" | Invoke-Expression

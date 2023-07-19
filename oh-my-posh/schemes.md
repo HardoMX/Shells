@@ -39,18 +39,13 @@
 
 **For Neon**
 - #F13806: ![#f13806](https://place-hold.it/15/f13806?text)
-- #FF7200: ![#FF7200](https://place-hold.it/15/FF7200?text)
-- #FFCC02: ![#FFCC02](https://place-hold.it/15/FFCC02?text)
 - #0735EE: ![#0735EE](https://place-hold.it/15/0735EE?text)
-- #0126A3: ![#0126A3](https://place-hold.it/15/0126A3?text)
   <br />
 - #34FD50: ![#34FD50](https://place-hold.it/15/34FD50?text)
 - #D1FE49: ![#D1FE49](https://place-hold.it/15/D1FE49?text)
 - #FBB23F: ![#FBB23F](https://place-hold.it/15/FBB23F?text)
 - #FE1F4E: ![#FE1F4E](https://place-hold.it/15/FE1F4E?text)
-- #BE0457: ![#BE0457](https://place-hold.it/15/BE0457?text)
   <br />
-- #FDC7D7: ![#FDC7D7](https://place-hold.it/15/FDC7D7?text)
 - #FF9DE6: ![#FF9DE6](https://place-hold.it/15/FF9DE6?text)
 - #A5D8F3: ![#A5D8F3](https://place-hold.it/15/A5D8F3?text)
 - #E8E500: ![#E8E500](https://place-hold.it/15/E8E500?text)
@@ -58,14 +53,7 @@
 - #FFD300: ![#FFD300](https://place-hold.it/15/FFD300?text)
 - #DE38C8: ![#DE38C8](https://place-hold.it/15/DE38C8?text)
 - #652EC7: ![#652EC7](https://place-hold.it/15/652EC7?text)
-- #33135C: ![#33135C](https://place-hold.it/15/33135C?text)
-  <br />
-- #3b27BA: ![#3B27BA](https://place-hold.it/15/3B27BA?text)
-- #E847AE: ![#E847AE](https://place-hold.it/15/E847AE?text)
-- #13CA91: ![#13CA91](https://place-hold.it/15/13CA91?text)
-- #FF9472: ![#FF9472](https://place-hold.it/15/FF9472?text)
   <br />
 - #FFFF66: ![#FFFF66](https://place-hold.it/15/FFFF66?text)
-- #FC6E22: ![#FC6E22](https://place-hold.it/15/FC6E22?text)
 - #FF1493: ![#FF1493](https://place-hold.it/15/FF1493?text)
 - #C24CF6: ![#C24CF6](https://place-hold.it/15/C24CF6?text)

@@ -1,6 +1,7 @@
 # Colors for the different oh-my-posh color schemes
 
 ### nord.omp.json
+[nordtheme](https://nordtheme.com)
 **Left block**
 | Color | Use |
 | :-: | :- |
@@ -19,6 +20,7 @@
 | ![#5e81ac](https://place-hold.it/15/5e81ac?text)`#5e81ac` | User- and Hostname |
 
 ### tokyo.omp.json
+[tokyo night](https://github.com/enkia/tokyo-night-vscode-theme)
 **Left block**
 | Color | Use |
 | :-: | :- |

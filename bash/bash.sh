@@ -19,4 +19,4 @@ fi
 alias grep="grep --color-auto"
 
 
-eval "$(oh-my-posh init bash --config ../oh-my-posh/tokyo.omp.json)"
+eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/HardoMX/Shells/main/oh-my-posh/tokyo.omp.json)"

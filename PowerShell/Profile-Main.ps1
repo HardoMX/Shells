@@ -81,6 +81,9 @@ function pkill($name) {
     Get-Process $name -ErrorAction SilentlyContinue | Stop-Process
 }
 
+#Initialise Oh-My-Posh
+oh-my-posh init pwsh --config "../oh-my-posh/tokyo.omp.json" | Invoke-Expression
+
 #Set up functions for quickly changing between my github repositories
 function Code1 {
     if ($IsWindows) {
@@ -150,6 +153,3 @@ Clear-Host
 if ($IsWindows){
     Set-Alias -name nvim -Value nvim.exe
 }
-
-#Initialise Oh-My-Posh
-oh-my-posh init pwsh --config "../oh-my-posh/tokyo.omp.json" | Invoke-Expression

@@ -82,6 +82,7 @@ function pkill($name) {
 }
 
 #Initialise Oh-My-Posh
+Set-Location ~\Documents\GitHub\Shells\PowerShell
 oh-my-posh init pwsh --config "../oh-my-posh/tokyo.omp.json" | Invoke-Expression
 
 #Set up functions for quickly changing between my github repositories

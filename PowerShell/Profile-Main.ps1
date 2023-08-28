@@ -128,10 +128,16 @@ function bashconf {
     elseif ($IsLinux) {
         Set-Location ~/Shells/bash}
     }
+function web {
+    if ($IsWindows) {
+        Set-Location ~\Documents\GitHub\Web}
+    elseif ($IsLinux) {
+        Set-Location ~/Web}
+}
 
 do 
 {
-    Write-Host "Choose Reposiotry: 1) Code1. 2) Code2. 3) Profile. 4) PowerShell. 5) Hypr. 6) Nvim. 7) Bash. 8) Home"
+    Write-Host "Choose Reposiotry: 1) Code1. 2) Code2. 3) Profile. 4) PowerShell. 5) Hypr. 6) Nvim. 7) Bash. 8) Web. 9)Home"
     $Repo = Read-Host [Enter Selection]
 
     Switch ($Repo)
@@ -143,9 +149,10 @@ do
         "5" {Hypr}
         "6" {vim}
         "7" {bashconf}
-        "8" {Set-Location ~}
+        "8" {web}
+        "9" {Set-Location ~}
     }
-}until (1..8 -contains $Repo)
+}until (1..9 -contains $Repo)
 
 Clear-Host
 

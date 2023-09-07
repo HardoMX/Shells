@@ -98,6 +98,12 @@ function Code2 {
     elseif ($IsLinux) {
         Set-Location ~/Code2}
     }
+function Code3 {
+    if ($IsWindows) {
+        Set-Location ~\Documents\GitHub\Code3}
+    elseif ($IsLinux) {
+        Set-Location ~/Code3}
+    }
 function profile {
     if ($IsWindows) {
         Set-Location ~\Documents\PowerShell}
@@ -137,22 +143,23 @@ function web {
 
 do 
 {
-    Write-Host "Choose Reposiotry: 1) Code1. 2) Code2. 3) Profile. 4) PowerShell. 5) Hypr. 6) Nvim. 7) Bash. 8) Web. 9)Home"
+    Write-Host "Choose Reposiotry: 1) Code1. 2) Code2. 3) Code3. 4) Profile. 5) PowerShell. 6) Hypr. 7) Nvim. 8) Bash. 9) Web. 10) Home"
     $Repo = Read-Host [Enter Selection]
 
     Switch ($Repo)
     {
         "1" {Code1}
         "2" {Code2}
-        "3" {profile}
-        "4" {Powershell}
-        "5" {Hypr}
-        "6" {vim}
-        "7" {bashconf}
-        "8" {web}
-        "9" {Set-Location ~}
+        "3" {Code3}
+        "4" {profile}
+        "5" {Powershell}
+        "6" {Hypr}
+        "7" {vim}
+        "8" {bashconf}
+        "9" {web}
+        "10" {Set-Location ~}
     }
-}until (1..9 -contains $Repo)
+}until (1..10 -contains $Repo)
 
 Clear-Host
 

@@ -15,7 +15,7 @@ else
     alias ll="ls -hNal --color=auto --group-directories-first" #See all files and folders in a list with full info
     alias ls="ls -hN --color=auto --group-directories-first" #Nicer ls command
 fi
-alias grep="grep --color-auto"
+alias grep="grep --color=auto"
 
 
 eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/HardoMX/Shells/main/oh-my-posh/tokyo.omp.json)"

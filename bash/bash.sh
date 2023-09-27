@@ -17,5 +17,7 @@ else
 fi
 alias grep="grep --color=auto"
 
+SUDO_EDITOR=/usr/bin/nvim
+export SUDO_EDITOR
 
 eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/HardoMX/Shells/main/oh-my-posh/tokyo.omp.json)"

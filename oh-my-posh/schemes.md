@@ -55,3 +55,6 @@
 | ![#FFFF66](https://place-hold.it/15/FFFF66?text)`#FFFF66` <br /> ![#FBB23F](https://place-hold.it/15/FBB23F?text)`#FBB23F` <br /> ![#652EC7](https://place-hold.it/15/652EC7?text)`#652EC7` <br /> ![#-C24CF6](https://place-hold.it/15/C24CF6?text)`#C24CF6` | Git working/staging changed <br /> Git ahead/behind <br /> Git Ahead <br /> Git Behind |
 | ![#E8E500](https://place-hold.it/15/E8E500?text)`#E8E500` | Time |
 | ![#FFD300](https://place-hold.it/15/FFD300?text)`#FFD300` | User- and Hostname |
+
+## TODO
+** Add "code logo" instead of heart on "command health" **

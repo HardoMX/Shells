@@ -21,3 +21,12 @@ SUDO_EDITOR=/usr/bin/nvim
 export SUDO_EDITOR
 
 eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/HardoMX/Shells/main/oh-my-posh/tokyo.omp.json)"
+
+if [ git ];
+then
+    alias gstat="git status"
+    alias gadd="git add"
+    alias gcom="git commit -m"
+    alias gpush="git push"
+    alias gpull="git pull"
+fi

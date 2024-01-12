@@ -1,25 +1,14 @@
 {
     "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-    "palette": {
-        "white": "#FFFFFF",
-        "tan": "#CC3802",
-        "teal": "#047E84",
-        "plum": "#9A348E",
-        "blush": "#DA627D",
-        "salmon": "#FCA17D",
-        "sky": "#86BBD8",
-        "teal_blue": "#33658A",
-        "light_blue": "#8ed1f7",
-        "yellow": "#ffde57",
-        "orange": "#feac19",
-        "light_green": "#33dd2d",
-        "dark_blue": "#29315a"
-    },
     "console_title_template": "{{ .OS }} - {{ .Folder }}{{ if .Root }} :: root{{ end }} :: {{ .Shell }}",
     "final_space": true,
     "version": 2,
     "shell_integration": true,
     "patch_pwsh_bleed": true,
+    "palette": {
+        "stats-bg": "#27005D",
+        "stats-fg": "#AED2FF"
+    },
     "blocks": [
         {
             "type": "prompt",
@@ -30,8 +19,8 @@
                     "style": "diamond",
                     "leading_diamond": "\u256D\u2500\uE0B6",
                     "trailing_diamond": "",
-                    "foreground": "p:white",
-                    "background": "p:dark_blue",
+                    "foreground": "#FFFFFC",
+                    "background": "#29315A",
                     "template": "{{ .UserName }}@{{ .HostName }} ",
                     "properties": {
                         "display_host": true
@@ -41,38 +30,38 @@
                     "type": "time",
                     "style": "diamond",
                     "trailing_diamond": "",
-                    "foreground": "p:yellow",
-                    "background": "p:sky",
+                    "foreground": "#B6FFFA",
+                    "background": "#687EFF",
                     "properties": {
-                        "time_format": "2006-01-02/15:04:05"
+                        "time_format": "02/01-15:04:05"
                     }
                 },
                 {
-                    "foreground": "p:salmon",
-                    "background": "p:dark_blue",
+                    "foreground": "p:stats-fg",
+                    "background": "p:stats-bg",
                     "style": "diamond",
                     "template": " MEM: {{ round .PhysicalPercentUsed .Precision }}%({{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB)",
                     "type": "sysinfo"
                 },
                 {
-                    "foreground": "p:salmon",
-                    "background": "p:dark_blue",
+                    "foreground": "p:stats-fg",
+                    "background": "p:stats-bg",
                     "style": "diamond",
                     "trailing_diamond": "",
                     "template": "|CPU: {{ round .Load1 .Precision }}%",
                     "type": "sysinfo"
                 },
                 {
-                    "foreground": "p:salmon",
-                    "background": "p:dark_blue",
+                    "foreground": "p:stats-fg",
+                    "background": "p:stats-bg",
                     "style": "diamond",
                     "trailing_diamond": "",
                     "template": "|BAT: {{ .Percentage }}%",
                     "type": "battery"
                 },
                 {
-                    "foreground": "p:plum",
-                    "background": "p:teal",
+                    "foreground": "#EEEEEE",
+                    "background": "#F14E32",
                     "style": "diamond",
                     "trailing_diamond": "\uE0B4",
                     "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }} {{ if .Staging.Changed }} <p:error> \uF046 {{ .Staging.String }}</>{{ end }}",
@@ -308,25 +297,19 @@
                     "type": "shell"
                 },
                 {
-                    "foreground": "#FFFFFC",
-                    "background": "#feac19",
+                    "foreground": "#FAEF5D",
+                    "background": "#1D2B53",
                     "style": "diamond",
-                    "trailing_diamond": "\uE0B0",
+                    "trailing_diamond": "",
                     "properties": {
                         "style": "mixed",
-                        "mixed_threshold": 4,
+                        "mixed_threshold": 10,
                         "mapped_locations": {
                             "~/Documents/GitHub": "\uF09B"
                         }
                     },
                     "type": "path"
-                }
-            ]
-        },
-        {
-            "type": "rprompt",
-            "alignment": "right",
-            "segments": [
+                },
                 {
                     "foreground": "#FFFFFC",
                     "background": "#888888",
@@ -334,8 +317,7 @@
                         "{{ if gt .Code 0 }}#F1184C{{ end }}"
                     ],
                     "style": "diamond",
-                    "leading_diamond": "\uE0B6",
-                    "trailing_diamond": "\uE0B4",
+                    "trailing_diamond": "\uE0B0",
                     "template": " {{ .FormattedMs }}",
                     "properties": {
                         "always_enabled": true

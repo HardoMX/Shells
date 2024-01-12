@@ -274,6 +274,14 @@
                     "leading_diamond": "\uE0B6",
                     "trailing_diamond": "\uE0B4",
                     "type": "ytm"
+                },
+                {
+                    "foreground": "#FFEB3B",
+                    "background": "#193549",
+                    "style": "diamond",
+                    "leading_diamond": "\uF0B6",
+                    "trailing_diamond": "\uF0B4",
+                    "type": "project"
                 }
             ]
         },

@@ -47,7 +47,7 @@
                     "foreground": "p:stats-fg",
                     "background": "p:stats-bg",
                     "style": "diamond",
-                    "trailing_diamond": "",
+                    "trailing_diamond": "\uE0B4",
                     "template": "|CPU: {{ round .Load1 .Precision }}%",
                     "type": "sysinfo"
                 },
@@ -55,21 +55,9 @@
                     "foreground": "p:stats-fg",
                     "background": "p:stats-bg",
                     "style": "diamond",
-                    "trailing_diamond": "",
+                    "trailing_diamond": "\uE0B4",
                     "template": "|BAT: {{ .Percentage }}%",
                     "type": "battery"
-                },
-                {
-                    "foreground": "#EEEEEE",
-                    "background": "#F14E32",
-                    "style": "diamond",
-                    "trailing_diamond": "\uE0B4",
-                    "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }} {{ if .Staging.Changed }} <p:error> \uF046 {{ .Staging.String }}</>{{ end }}",
-                    "properties": {
-                        "fetch_status": true,
-                        "fetch_upstream_icon": true
-                    },
-                    "type": "git"
                 }
             ]
         },
@@ -271,6 +259,19 @@
                     "leading_diamond": "\uF0B6",
                     "trailing_diamond": "\uF0B4",
                     "type": "project"
+                },
+                {
+                    "foreground": "#EEEEEE",
+                    "background": "#F14E32",
+                    "style": "diamond",
+                    "leading_diamond": "\uE0B6",
+                    "trailing_diamond": "\uE0B4",
+                    "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }} {{ if .Staging.Changed }} <p:error> \uF046 {{ .Staging.String }}</>{{ end }}",
+                    "properties": {
+                        "fetch_status": true,
+                        "fetch_upstream_icon": true
+                    },
+                    "type": "git"
                 }
             ]
         },

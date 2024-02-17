@@ -85,7 +85,7 @@ function pkill($name) {
 Set-Location ~\Documents\GitHub\Shells\PowerShell
 oh-my-posh init pwsh --config "../oh-my-posh/theme.omp.json" | Invoke-Expression
 
-#Set up functions for quickly changing between github repositories in Windows
+#Change directory to a repository at start, repository list is dynamic
 if ($IsWindows) {
     $repoDir = "~\Documents\GitHub"
     $repoAmmount = (Get-ChildItem -Path $repoDir | Measure-Object).Count

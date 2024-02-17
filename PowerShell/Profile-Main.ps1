@@ -85,86 +85,33 @@ function pkill($name) {
 Set-Location ~\Documents\GitHub\Shells\PowerShell
 oh-my-posh init pwsh --config "../oh-my-posh/theme.omp.json" | Invoke-Expression
 
-#Set up functions for quickly changing between my github repositories
-function Code1 {
-    if ($IsWindows) {
-        Set-Location ~\Documents\GitHub\Code}
-    elseif ($IsLinux) {
-        Set-Location ~/Code}
-    }
-function Code2 {
-    if ($IsWindows) {
-        Set-Location ~\Documents\GitHub\Code2}
-    elseif ($IsLinux) {
-        Set-Location ~/Code2}
-    }
-function Code3 {
-    if ($IsWindows) {
-        Set-Location ~\Documents\GitHub\Code3}
-    elseif ($IsLinux) {
-        Set-Location ~/Code3}
-    }
-function profile {
-    if ($IsWindows) {
-        Set-Location ~\Documents\PowerShell}
-    elseif ($IsLinux) {
-        Set-Location ~/.config/powershell}
-    }
-function Powershell {
-    if ($IsWindows) {
-        Set-Location ~\Documents\GitHub\Shells\PowerShell}
-    elseif ($IsLinux) {
-        Set-Location ~/Shells/PowerShell}
-    }
-function Hypr {
-    if ($IsWindows) {
-        Set-Location ~\Documents\GitHub\Hyprland-Config}
-    elseif ($IsLinux) {
-        Set-Location ~/Hyprland-Config}
-    }
-function vim {
-    if ($IsWindows) {
-        Set-Location ~\Documents\GitHub\nvim}
-    elseif ($IsLinux) {
-        Set-Location ~/.config/nvim}
-    }
-function bashconf {
-    if ($IsWindows) {
-        Set-Location ~\Documents\GitHub\Shells\bash}
-    elseif ($IsLinux) {
-        Set-Location ~/Shells/bash}
-    }
-function web {
-    if ($IsWindows) {
-        Set-Location ~\Documents\GitHub\Web}
-    elseif ($IsLinux) {
-        Set-Location ~/Web}
-}
+#Set up functions for quickly changing between github repositories in Windows
+if ($IsWindows) {
+    $repoDir = "~\Documents\GitHub"
+    $repoAmmount = (Get-ChildItem -Path $repoDir | Measure-Object).Count
+    $repos = @()
+    $repoNames = @()
 
-do 
-{
-    Write-Host "Choose Reposiotry: 1) Code1. 2) Code2. 3) Code3. 4) Profile. 5) PowerShell. 6) Hypr. 7) Nvim. 8) Bash. 9) Web. 10) Home"
-    $Repo = Read-Host [Enter Selection]
+    for ($i = 0; $i -lt $repoAmmount; $i++) {
+        $repoName = (Get-ChildItem -Path $repoDir | Select-Object -Index $i).Name
+        $repos += "$repoDir\$repoName"
+        $repoNames += "$repoName"
+    }
 
-    Switch ($Repo)
+    $repos += "~\Documents\PowerShell"
+    $repoNames += "Profile"
+    $repos += "~"
+    $repoNames += "Home"
+
+    do
     {
-        "1" {Code1}
-        "2" {Code2}
-        "3" {Code3}
-        "4" {profile}
-        "5" {Powershell}
-        "6" {Hypr}
-        "7" {vim}
-        "8" {bashconf}
-        "9" {web}
-        "10" {Set-Location ~}
-    }
-}until (1..10 -contains $Repo)
+        Write-Host "Choose Repository: "
+        for ($i = 0; $i -lt $repoAmmount + 2; $i++) {
+            Write-Host ($i + 1) ")" $repoNames[$i]
+        }
+        $Repo = [int](Read-Host [Enter Selection])
 
-Clear-Host
+        Set-Location -Path $repos[$Repo - 1]
 
-
-#Set up nvim alias on windows
-if ($IsWindows){
-    Set-Alias -name nvim -Value nvim.exe
+    }until (1..($repoAmmount + 2) -contains $Repo)
 }

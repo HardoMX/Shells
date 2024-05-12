@@ -33,7 +33,7 @@
                     "foreground": "#B6FFFA",
                     "background": "#687EFF",
                     "properties": {
-                        "time_format": "15:04:05"
+                        "time_format": "15:04"
                     }
                 },
                 {

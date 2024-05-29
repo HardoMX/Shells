@@ -50,14 +50,6 @@
                     "trailing_diamond": "\uE0B4",
                     "template": "|CPU: {{ round .Load1 .Precision }}%",
                     "type": "sysinfo"
-                },
-                {
-                    "foreground": "p:stats-fg",
-                    "background": "p:stats-bg",
-                    "style": "diamond",
-                    "trailing_diamond": "\uE0B4",
-                    "template": "|BAT: {{ .Percentage }}%",
-                    "type": "battery"
                 }
             ]
         },

@@ -286,7 +286,7 @@
                     "background": "#9A348E",
                     "style": "diamond",
                     "trailing_diamond": "",
-                    "template": " \uF120 {{ .Name }}",
+                    "template": " \uF120  {{ .Name }} ",
                     "type": "shell"
                 },
                 {

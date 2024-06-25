@@ -278,7 +278,7 @@
                     "style": "diamond",
                     "leading_diamond": "\u2570\u2500\uE0B6",
                     "trailing_diamond": "",
-                    "template": "{{ if .WSL }}\uE712->{{ end }}{{ .Icon }}",
+                    "template": "{{ if .WSL }}\uE712->{{ end }}{{ .Icon }} ",
                     "type": "os"
                 },
                 {
@@ -286,7 +286,7 @@
                     "background": "#9A348E",
                     "style": "diamond",
                     "trailing_diamond": "",
-                    "template": "\uF120 {{ .Name }}",
+                    "template": " \uF120 {{ .Name }}",
                     "type": "shell"
                 },
                 {
@@ -311,7 +311,7 @@
                     ],
                     "style": "diamond",
                     "trailing_diamond": "\uE0B0",
-                    "template": " {{ .FormattedMs }}",
+                    "template": "  {{ .FormattedMs }}",
                     "properties": {
                         "always_enabled": true
                     },

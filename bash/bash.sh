@@ -33,3 +33,9 @@ then
     alias gpull="git pull"
     alias gco="git checkout"
 fi
+
+if [ gem ];
+then
+    export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+    export PATH="$PATH:$GEM_HOME/bin"
+fi

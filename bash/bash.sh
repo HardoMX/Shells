@@ -32,6 +32,12 @@ then
     alias gpush="git push"
     alias gpull="git pull"
     alias gco="git checkout"
+    alias gdiff="git diff"
+fi
+
+if [ fastfetch ];
+then
+    alias neofetch="fastfetch"
 fi
 
 if [ gem ];

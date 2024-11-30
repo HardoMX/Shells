@@ -20,9 +20,12 @@ alias grep="grep --color=auto"
 SUDO_EDITOR=/usr/bin/nvim
 export SUDO_EDITOR
 
-# Choose between local and web-based config location. Local is faster, but web-based might be more up to date depending on your config
-# eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/HardoMX/Shells/main/oh-my-posh/theme.omp.json)"
-eval "$(oh-my-posh init bash --config $HOME/Shells/oh-my-posh/theme.omp.json)"
+if [ oh-my-posh ];
+then
+    # Choose between local and web-based config location. Local is faster, but web-based might be more up to date depending on your config
+    # # eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/HardoMX/Shells/main/oh-my-posh/theme.omp.json)"
+    eval "$(oh-my-posh init bash --config $HOME/Shells/oh-my-posh/theme.omp.json)"
+fi
 
 if [ git ];
 then

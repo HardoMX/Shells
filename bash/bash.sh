@@ -19,6 +19,8 @@ alias grep="grep --color=auto"
 
 SUDO_EDITOR=/usr/bin/nvim
 export SUDO_EDITOR
+GIT_EDITOR=/usr/bin/nvim
+export GIT_EDITOR
 
 if hash oh-my-posh 2>/dev/null;
 then

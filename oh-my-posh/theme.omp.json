@@ -68,7 +68,7 @@
         },
         {
           "properties": {
-            "display_mode": "files"
+            "display_mode": "context"
           },
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b4",

@@ -55,3 +55,8 @@ if hash bob 2>/dev/null;
 then
     export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
 fi
+
+if hash go 2>/dev/null;
+then
+    export PATH="$HOME/go/bin:$PATH"
+fi

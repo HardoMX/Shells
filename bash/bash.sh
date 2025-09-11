@@ -17,8 +17,6 @@ else
 fi
 alias grep="grep --color=auto"
 
-SUDO_EDITOR=/usr/bin/nvim
-export SUDO_EDITOR
 GIT_EDITOR=/usr/bin/nvim
 export GIT_EDITOR
 
@@ -51,10 +49,15 @@ then
     export PATH="$PATH:$GEM_HOME/bin"
 fi
 
+SUDO_EDITOR=/usr/bin/nvim
+
 if hash bob 2>/dev/null;
 then
+    SUDO_EDITOR=$HOME/.local/share/bob/nvim-bin/nvim
     export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
 fi
+
+export SUDO_EDITOR
 
 if hash go 2>/dev/null;
 then
